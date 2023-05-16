@@ -1,0 +1,39 @@
+<app-list-games (sendPosition)="getPosition($event)"></app-list-games>
+
+<div class="modal fade mt-5 pt-5" id="editModal" tabindex="-1" role="dialog"
+aria-label="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Editar Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="">Titulo</label>
+                        <input *ngIf="gameFound" type="text" name="title" class="form-control" [(ngModel)]="gameFound.title">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Categoria</label>
+                        <input *ngIf="gameFound" type="text" name="gender" class="form-control" [(ngModel)]="gameFound.gender">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Descripcion</label>
+                        <textarea *ngIf="gameFound" class="form-control" name="description" [(ngModel)]="gameFound.description"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editGame()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
