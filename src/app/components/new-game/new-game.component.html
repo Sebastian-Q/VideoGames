@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title text-center">Videojuego</h3>
+        <h3 class="card-title text-center">Nuevo Videojuego</h3>
     </div>
     <div class="card-body">
         <form #myForm>
@@ -8,12 +8,12 @@
                 <label for="">Titulo</label>
                 <input type="text" class="form-control" aria-describedby="title" name="title" [(ngModel)]="newGame.title">
             </div>
-            
+
             <div class="form-group">
                 <label for="">Genero</label>
                 <input type="text" class="form-control" aria-describedby="gender" name="gender" [(ngModel)]="newGame.gender">
             </div>
-            
+
             <div class="form-group">
                 <label for="">Descripción</label>
                 <textarea class="form-control" name="description" [(ngModel)]="newGame.description"></textarea>

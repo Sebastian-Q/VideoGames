@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { GameService } from 'src/app/services/game.service';
 import { Game } from 'src/app/models/Games';
 
@@ -26,9 +26,11 @@ export class ListGamesComponent implements OnInit{
   getPosition(_id: number){
     this.sendPosition.emit(_id)
   }
-  
+
   //Eliminar
-  deleteGame(_id: number){
-    this.listServe.deleteGame(_id)
+  deleteGame(game: Game){
+    if(confirm('¿Desea Eliminarlo?')){
+      this.listServe.deleteGame(game)
+    }
   }
 }

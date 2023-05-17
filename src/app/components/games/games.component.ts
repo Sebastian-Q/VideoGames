@@ -8,7 +8,7 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class GamesComponent  implements OnInit{
   myGame: any;
-  gameFound: any; 
+  gameInfo: any;
 
   constructor(private listServe : GameService){}
 
@@ -17,10 +17,10 @@ export class GamesComponent  implements OnInit{
 
   getPosition($event: any){
     this.myGame = this.listServe.getOneGame($event)
-    this.gameFound = this.myGame;
+    this.gameInfo = this.myGame;
   }
 
   editGame(){
-    this.listServe.editGame(this.gameFound)
+    this.listServe.editGame(this.gameInfo)
   }
 }
